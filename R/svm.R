@@ -21,7 +21,8 @@ svm <- function(X, classes, C, margin_type, kernel_function, feature_map) {
     params <- train_primal_hard_margin_svm(X, classes)
     prediction_fun <- predict_hard_margin_svm(params$w, params$b)
   }
-
+  model <- list(prediction_fun, params)
+  names(model) <- c("prediction_function", "params")
   return(prediction_fun)
 }
 
@@ -52,7 +53,7 @@ train_primal_hard_margin_svm <- function(data, classes) {
   return(return_params)
 }
 
-primal_hard_margin_2d_plotter <- function(){
+primal_hard_margin_2d_plotter <- function(w,b){
   hard_svm_plotter <- function(x) {
     1/w[2] * (b -(w[1] * x ))
   }
