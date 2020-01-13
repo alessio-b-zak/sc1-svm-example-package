@@ -23,7 +23,7 @@ svm <- function(X, classes, C, margin_type, kernel_function, feature_map) {
   }
   model <- list(prediction_fun, params)
   names(model) <- c("prediction_function", "params")
-  return(prediction_fun)
+  return(model)
 }
 
 
