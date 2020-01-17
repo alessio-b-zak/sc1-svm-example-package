@@ -31,3 +31,5 @@ where:
   - `margin_type` is either `hard` or `soft`
   - `kernel_function` is the kernel function to build the kernel matrix (not needed if `margin_type == "hard")
   - `feature_map` is the map corresponding the the induced feature space of the kernel function (not needed if `margin_type == "hard")
+
+`svm()` returns a model object which contains `$prediction_function` which classifies a new data point and `$params` which contains the `w` and `b` parameters associated with `predition_function`
